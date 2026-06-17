@@ -1,0 +1,8 @@
+asiento,fecha,cuenta,concepto,debe,haber
+1,2026-01-05,600,Compra de material,1000.00,0.00
+1,2026-01-05,572,Banco,0.00,1000.00
+2,2026-01-10,430,Cliente,1210.00,0.00
+2,2026-01-10,700,Venta de mercancias,0.00,1000.00
+2,2026-01-10,477,IVA repercutido,0.00,210.00
+3,2026-01-15,572,Banco,1210.00,0.00
+3,2026-01-15,430,Cliente,0.00,1210.00

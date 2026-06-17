@@ -1,0 +1,4 @@
+# El verificador (auditor/coherencia.py) usa SOLO la biblioteca estandar de Python.
+# pytest es opcional: solo hace falta para ejecutar las pruebas con `pytest`.
+# Las pruebas tambien se pueden ejecutar sin dependencias:  python auditor/test_coherencia.py
+pytest>=7

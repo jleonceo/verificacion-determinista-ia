@@ -1,11 +1,11 @@
 # verificacion-determinista-ia
 
-**Verificación determinista para sistemas de IA — comprobaciones de coherencia que no dependen de la IA.**
-**Deterministic verification for AI systems — coherence checks that do not depend on AI.**
+**Verificación determinista para sistemas de IA, comprobaciones de coherencia que no dependen de la IA.**
+**Deterministic verification for AI systems, coherence checks that do not depend on AI.**
 
 ---
 
-## 🇪🇸 Español
+## Español
 
 ### Qué resuelve
 Los sistemas de IA generan respuestas verosímiles, pero lo verosímil no equivale a lo correcto: un conjunto de datos puede ser internamente consistente y, aun así, no reflejar la realidad. Este proyecto implementa una capa de verificación determinista, código que recomprueba la coherencia de los datos mediante aritmética, sin recurrir a ningún modelo, y que señala las incongruencias entre las distintas capas del sistema.
@@ -58,16 +58,18 @@ verificacion-determinista-ia/
 ### Privacidad
 El caso de ejemplo utiliza un conjunto de datos sintético; no contiene información real ni personal.
 
-### Ecosistema — cómo encaja con los demás repositorios
+### Ecosistema, cómo encaja con los demás repositorios
 Este repositorio es la pieza de **verificación** de un conjunto de proyectos sobre sistemas de agentes de IA:
-- **[gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas)** — el método de gobernanza contado en prosa. Este repo es el código de una de sus piezas: la verificación que recomprueba el estado sin IA.
-- **[accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm)** — el enjambre de agentes que genera la contabilidad. Estas comprobaciones son el guardarraíl que lo mantiene cuadrado.
-- **[agent-memory-governance](https://github.com/jleonceo/agent-memory-governance)** — la gobernanza de la memoria del agente. Su hermano: allí se gobierna lo que el agente *recuerda*; aquí, la coherencia de los *datos*.
-- **[llm-eval-contable](https://github.com/jleonceo/llm-eval-contable)** — el examen que mide si la skill *acierta*. Complementario: aquel verifica las *respuestas*; este, que los *datos* cuadren entre capas.
+- **[gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas)**, el método de gobernanza contado en prosa. Este repo es el código de una de sus piezas: la verificación que recomprueba el estado sin IA.
+- **[accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm)**, el enjambre de agentes que genera la contabilidad. Estas comprobaciones son el guardarraíl que lo mantiene cuadrado.
+- **[agent-memory-governance](https://github.com/jleonceo/agent-memory-governance)**, la gobernanza de la memoria del agente. Su hermano: allí se gobierna lo que el agente *recuerda*; aquí, la coherencia de los *datos*.
+- **[llm-eval-contable](https://github.com/jleonceo/llm-eval-contable)**, el examen que mide si la skill *acierta*. Complementario: aquel verifica las *respuestas*; este, que los *datos* cuadren entre capas.
+- **[orquestacion-enjambres-ia](https://github.com/jleonceo/orquestacion-enjambres-ia)**, el enrutado multi-agente. Aquel verifica a qué agente va cada petición; este, que los datos cuadren.
+- **[tu-primer-asistente-ia-web](https://github.com/jleonceo/tu-primer-asistente-ia-web)**, la entrada sin tecnicismos: qué es un asistente de IA, para quien empieza de cero.
 
 ---
 
-## 🇬🇧 English
+## English
 
 ### What it solves
 AI systems produce plausible answers, but plausible is not the same as correct: a dataset can be internally consistent and still fail to reflect reality. This project implements a deterministic verification layer, code that re-checks data coherence with plain arithmetic, without relying on any model, and that flags inconsistencies between the system's layers.
@@ -98,7 +100,7 @@ The negative control tampers with the **summary only**: the ledger still balance
 The sample case uses a synthetic dataset; it contains no real or personal information.
 
 ### Ecosystem
-This repository is the **verification** piece of a set of projects on AI agent systems: it provides the deterministic guardrail for [gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas) (the governance method), [accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm) (the agent swarm it keeps balanced), [agent-memory-governance](https://github.com/jleonceo/agent-memory-governance) (its sibling: memory vs. data coherence) and [llm-eval-contable](https://github.com/jleonceo/llm-eval-contable) (which checks answers, while this checks cross-layer coherence).
+This repository is the **verification** piece of a set of projects on AI agent systems: it provides the deterministic guardrail for [gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas) (the governance method), [accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm) (the agent swarm it keeps balanced), [agent-memory-governance](https://github.com/jleonceo/agent-memory-governance) (its sibling: memory vs. data coherence), [llm-eval-contable](https://github.com/jleonceo/llm-eval-contable) (which checks answers, while this checks cross-layer coherence), [orquestacion-enjambres-ia](https://github.com/jleonceo/orquestacion-enjambres-ia) (which routes each request to the right agent) and [tu-primer-asistente-ia-web](https://github.com/jleonceo/tu-primer-asistente-ia-web) (the plain-language entry point for beginners).
 
 ---
 

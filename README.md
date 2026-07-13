@@ -66,6 +66,7 @@ Este repositorio es la pieza de **verificación** de un conjunto de proyectos so
 - **[llm-eval-contable](https://github.com/jleonceo/llm-eval-contable)**, el examen que mide si la skill *acierta*. Complementario: aquel verifica las *respuestas*; este, que los *datos* cuadren entre capas.
 - **[orquestacion-enjambres-ia](https://github.com/jleonceo/orquestacion-enjambres-ia)**, el enrutado multi-agente. Aquel verifica a qué agente va cada petición; este, que los datos cuadren.
 - **[tu-primer-asistente-ia-web](https://github.com/jleonceo/tu-primer-asistente-ia-web)**, la entrada sin tecnicismos: qué es un asistente de IA, para quien empieza de cero.
+- **[tesoreria-forecast-ia](https://github.com/jleonceo/tesoreria-forecast-ia)**, previsión de caja por descomposición con backtesting, más ratios y aging.
 
 ---
 
@@ -100,7 +101,7 @@ The negative control tampers with the **summary only**: the ledger still balance
 The sample case uses a synthetic dataset; it contains no real or personal information.
 
 ### Ecosystem
-This repository is the **verification** piece of a set of projects on AI agent systems: it provides the deterministic guardrail for [gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas) (the governance method), [accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm) (the agent swarm it keeps balanced), [agent-memory-governance](https://github.com/jleonceo/agent-memory-governance) (its sibling: memory vs. data coherence), [llm-eval-contable](https://github.com/jleonceo/llm-eval-contable) (which checks answers, while this checks cross-layer coherence), [orquestacion-enjambres-ia](https://github.com/jleonceo/orquestacion-enjambres-ia) (which routes each request to the right agent) and [tu-primer-asistente-ia-web](https://github.com/jleonceo/tu-primer-asistente-ia-web) (the plain-language entry point for beginners).
+This repository is the **verification** piece of a set of projects on AI agent systems: it provides the deterministic guardrail for [gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas) (the governance method), [accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm) (the agent swarm it keeps balanced), [agent-memory-governance](https://github.com/jleonceo/agent-memory-governance) (its sibling: memory vs. data coherence), [llm-eval-contable](https://github.com/jleonceo/llm-eval-contable) (which checks answers, while this checks cross-layer coherence), [orquestacion-enjambres-ia](https://github.com/jleonceo/orquestacion-enjambres-ia) (which routes each request to the right agent) and [tu-primer-asistente-ia-web](https://github.com/jleonceo/tu-primer-asistente-ia-web) (the plain-language entry point for beginners), plus [tesoreria-forecast-ia](https://github.com/jleonceo/tesoreria-forecast-ia) (cash-flow forecasting with backtesting, ratios and aging).
 
 ---
 

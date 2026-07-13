@@ -1,7 +1,7 @@
 # verificacion-determinista-ia
 
-**Verificación determinista para sistemas de IA, comprobaciones de coherencia que no dependen de la IA.**
-**Deterministic verification for AI systems, coherence checks that do not depend on AI.**
+**Verificación determinista para sistemas de IA: comprobaciones de coherencia que no dependen de la IA.**
+**Deterministic verification for AI systems: coherence checks that do not depend on AI.**
 
 ---
 
@@ -30,7 +30,7 @@ Incluye además una prueba de control: introduce a propósito un error en los da
 python auditor/coherencia.py        # informe sobre los datos de ejemplo
 python auditor/test_coherencia.py   # las pruebas, incluido el control negativo
 ```
-Salida sobre los datos de ejemplo:
+Salida sobre los datos de ejemplo (abreviada; el script imprime además su cabecera):
 ```
 [OK   ] INV-1 - Cuadre global (total del debe = total del haber)
          debe=3420.00  haber=3420.00  diferencia=0.00

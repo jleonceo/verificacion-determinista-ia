@@ -1,0 +1,31 @@
+name: ci
+
+# Por que existe: hasta el 20/07/2026 este repo no tenia CI.
+# La suite se verifico en verde en local antes de cablear esto.
+#
+# Aviso honesto, y es importante en un repo que va de verificar: una auditoria del
+# 20/07 midio que de los TRES invariantes, la suite solo protege UNO. Desactivar
+# INV-1 o INV-2 por completo deja las pruebas en verde — no hay control negativo
+# para ellos. Este CI ejecuta lo que hay; ampliar la cobertura a INV-1/INV-2 esta
+# pendiente y es mas importante que este fichero.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Biblioteca estandar unicamente (pytest es opcional y no hace falta aqui).
+      - name: Auditor de coherencia (datos limpios = SANO + control negativo)
+        run: python auditor/test_coherencia.py

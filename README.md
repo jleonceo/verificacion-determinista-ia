@@ -79,7 +79,9 @@ Este repositorio es la pieza de **verificación** de un conjunto de proyectos so
 ## English
 
 ### What it solves
-AI systems produce plausible answers, but plausible is not the same as correct: a dataset can be internally consistent and still fail to reflect reality. This project implements a deterministic verification layer, code that re-checks data coherence with plain arithmetic, without relying on any model, and that flags inconsistencies between the system's layers.
+AI systems produce plausible answers. Plausible is not correct. A dataset can be consistent with itself and still fail to reflect reality.
+
+This project adds a deterministic verification layer: code that re-checks coherence with plain arithmetic, without asking any model. Its job is to flag where the layers of the system stop matching each other.
 
 ### A concrete example
 A double-entry record can be balanced on its own (debits = credits) and yet not match the actual balance of its account across the whole period. Individual validation accepts it; only the cross-layer check reveals the inconsistency. That is the kind of error these checks catch.
@@ -92,7 +94,9 @@ The verifier evaluates a set of rules that must always hold in correct books:
 
 Each rule yields a yes or a no: it holds, or the alarm fires. And every check is a plain arithmetic operation, not a query to an AI.
 
-That is the core of its reliability. AI models are updated and replaced frequently, and their behaviour can shift when they change; an AI-based verification could return one result today and a different one tomorrow. This one does not: being pure arithmetic, it always returns the same answer regardless of the model in use, and it does not inherit the errors of the system it checks.
+That is the core of its reliability. Models are updated and replaced often, and their behaviour shifts when they change. An AI-based verification would return one result today and another tomorrow.
+
+This one does not. Being pure arithmetic, it always returns the same answer, whichever model is in use. And it does not inherit the errors of the system it checks.
 
 It also includes a control test: it deliberately injects an error into the data and confirms that the verifier detects it. If it did not fire, we would know the verification had stopped working.
 

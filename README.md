@@ -8,10 +8,12 @@
 ## Español
 
 ### Qué resuelve
-Los sistemas de IA generan respuestas verosímiles, pero lo verosímil no equivale a lo correcto: un conjunto de datos puede ser internamente consistente y, aun así, no reflejar la realidad. Este proyecto implementa una capa de verificación determinista, código que recomprueba la coherencia de los datos mediante aritmética, sin recurrir a ningún modelo, y que señala las incongruencias entre las distintas capas del sistema.
+Los sistemas de IA generan respuestas verosímiles. Y lo verosímil no es lo correcto. Un conjunto de datos puede ser coherente consigo mismo y no reflejar la realidad.
+
+Este proyecto pone una capa de verificación determinista: código que recomprueba la coherencia por aritmética, sin preguntar a ningún modelo. Su trabajo es señalar dónde no cuadran entre sí las distintas capas del sistema.
 
 ### Un ejemplo concreto
-Un asiento contable puede estar cuadrado por sí mismo (debe = haber) y, sin embargo, no corresponder con el saldo real de su grupo en el conjunto del ejercicio. La validación individual lo da por correcto; solo el cruce entre capas revela la incoherencia. Esa es la clase de error que estas comprobaciones detectan.
+Un asiento contable puede cuadrar por sí mismo, debe igual a haber, y no corresponder con el saldo real de su grupo en el ejercicio. La validación individual lo da por bueno. Solo el cruce entre capas descubre la incoherencia. Esa es la clase de error que estas comprobaciones cazan.
 
 ### Cómo funciona y por qué es fiable
 El verificador comprueba un conjunto de reglas que, en unas cuentas correctas, siempre deben cumplirse:
@@ -21,9 +23,11 @@ El verificador comprueba un conjunto de reglas que, en unas cuentas correctas, s
 
 Cada regla se responde con un sí o un no: o se cumple, o salta la alarma. Y cada comprobación se hace con una operación aritmética, no preguntándole a una IA.
 
-Ahí está la clave de su fiabilidad. Los modelos de IA se actualizan y se sustituyen a menudo, y al cambiar pueden comportarse de otra forma; una verificación que dependiera de la IA podría dar hoy un resultado y mañana otro distinto. Esta no: al ser pura aritmética, da siempre la misma respuesta, use el modelo que use, y no arrastra los posibles errores del sistema que revisa.
+Ahí está la clave. Los modelos se actualizan y se sustituyen a menudo, y al cambiar se comportan distinto. Una verificación que dependiera de la IA daría hoy un resultado y mañana otro.
 
-Incluye además una prueba de control: introduce a propósito un error en los datos y confirma que el verificador lo detecta. Si no saltara, sabríamos que la verificación ha dejado de funcionar.
+Esta no. Al ser pura aritmética, responde siempre igual, use el modelo que use. Y no arrastra los errores del sistema que revisa.
+
+Incluye una prueba de control. Mete a propósito un error en los datos y comprueba que el verificador lo caza. Si no saltara, sabríamos que la verificación ha dejado de servir.
 
 ### Pruébalo
 ```bash
@@ -40,7 +44,7 @@ Salida sobre los datos de ejemplo (abreviada; el script imprime además su cabec
          el resumen corresponde con el libro
 VEREDICTO: SANO
 ```
-El control negativo manipula **solo el resumen**: el libro sigue cuadrando (INV-1 e INV-2 en verde) y aun así INV-3 detecta que el resumen ya no corresponde con sus datos. Es el caso «cuadra por sí mismo y aun así es incoherente».
+El control negativo toca **solo el resumen**. El libro sigue cuadrando, con INV-1 e INV-2 en verde, y aun así INV-3 detecta que el resumen ya no corresponde con sus datos. Es el caso de manual: cuadra por sí mismo y es incoherente.
 
 ### Estructura
 ```

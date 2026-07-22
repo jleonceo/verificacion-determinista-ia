@@ -62,7 +62,7 @@ verificacion-determinista-ia/
 ### Privacidad
 El caso de ejemplo utiliza un conjunto de datos sintético; no contiene información real ni personal.
 
-### Ecosistema, cómo encaja con los demás repositorios
+### Ecosistema
 Este repositorio es la pieza de **verificación** de un conjunto de proyectos sobre sistemas de agentes de IA:
 - **[gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas)**, el método de gobernanza contado en prosa. Este repo es el código de una de sus piezas: la verificación que recomprueba el estado sin IA.
 - **[accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm)**, el enjambre de agentes que genera la contabilidad. Estas comprobaciones son el guardarraíl que lo mantiene cuadrado.

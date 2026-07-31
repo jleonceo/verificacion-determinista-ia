@@ -15,18 +15,18 @@ Cuando un programa corriente se rompe, avisa: salta un mensaje en la pantalla, s
 lo mira sabe que hay algo que arreglar. Con esa manera de fallar llevamos conviviendo cuarenta años.
 
 Un sistema que trabaja con inteligencia artificial no se rompe así. Imagina que le pides corregir el
-tratamiento del IVA de una factura. Corrige el apunte, y el apunte queda impecable, con lo anotado a
+tratamiento del IVA de una factura. Corrige el apunte. Y el apunte queda impecable, con lo anotado a
 la izquierda sumando lo mismo que lo anotado a la derecha. No salta ningún aviso en la pantalla,
 porque no hay nada de qué avisar.
 
 Pero esa corrección tenía que llegar además al cierre del ejercicio, a la apertura del siguiente, a
 la declaración del trimestre y al cuadro de mando de dirección. Cuatro sitios más. Si uno se queda
-sin tocar, la pieza que se quedó atrás sigue estando cuadrada y correcta por dentro, y lo único que
+sin tocar, la pieza que se quedó atrás sigue estando cuadrada y correcta por dentro. Lo único que
 pasa es que deja de corresponder con las demás. Eso se descubre meses después, cuando un total no
 encaja con otro total y ya nadie recuerda qué se cambió aquel día.
 
 Hay una segunda avería igual de callada. Cada pocos meses los modelos de inteligencia artificial se
-actualizan, y al actualizarse cambian de comportamiento, de manera que una vigilancia montada sobre
+actualizan y al actualizarse cambian de comportamiento, de manera que una vigilancia montada sobre
 un modelo tampoco piensa igual de un mes para otro. De ese cambio de criterio no avisa nadie.
 
 ### Qué hay en este repositorio
@@ -35,8 +35,8 @@ Un programa de ciento cuatro líneas, sus pruebas, dos ficheros de datos inventa
 de dónde salió todo. Lo único que hace el programa es leer unas cuentas y contestar con una palabra,
 `SANO` o `ENFERMO`.
 
-Para decidirlo no le pregunta a ninguna inteligencia artificial: suma, resta y compara. Tampoco
-necesita conexión a internet, ni base de datos, ni ninguna pieza de software añadida a las que
+Para decidirlo no le pregunta a ninguna inteligencia artificial. Suma, resta y compara. Tampoco
+necesita conexión a internet. Ni base de datos. Ni ninguna pieza de software añadida a las que
 Python trae de fábrica.
 
 **Determinista** quiere decir que con los mismos datos da siempre la misma respuesta, hoy y dentro de
@@ -79,8 +79,8 @@ de cuadrar.
 ### Los conceptos
 
 Una **invariante** es una regla que en unos datos correctos se cumple siempre y sin excepción que
-valga, y que por eso admite una respuesta de una sola palabra: o se cumple, o hay algo estropeado.
-En este repositorio las invariantes son tres, y cada una vigila un nivel distinto.
+valga. Por eso admite una respuesta de una sola palabra: o se cumple, o hay algo estropeado.
+En este repositorio las invariantes son tres. Cada una vigila un nivel distinto.
 
 - INV-1, el cuadre global. Se suma el libro entero y se comprueba que la columna de la izquierda
   da lo mismo que la de la derecha, 3.420,00 euros por cada lado en los datos de ejemplo.
@@ -98,12 +98,12 @@ sabes que el detector no está avisando, pero no sabes si calla porque no hay na
 estropeado. Eso hace la segunda de las dos pruebas del repositorio: coge el resumen, le suma cien
 euros a la primera cuenta y exige que INV-3 se ponga roja. El veredicto llega con el detalle puesto,
 `cuenta 600 (resumen=1100.00, real=1000.00)`, mientras el libro sigue cuadrando y las otras dos
-invariantes siguen en verde. Es el caso de manual: cuadra por sí mismo y es incoherente.
+invariantes siguen en verde. Es el caso de manual. Cuadra por sí mismo y es incoherente.
 
 Un ordenador guarda por defecto los números con decimales de una forma que arrastra un residuo
 minúsculo, de modo que si le pides 0,1 más 0,2 te contesta 0,30000000000000004. Comparar dos
 importes así para ver si son iguales no significa gran cosa. Este programa usa el otro modo de
-cálculo que ofrece Python, el de la **aritmética exacta** con decimales, y por eso se permite un
+cálculo que ofrece Python, el de la **aritmética exacta** con decimales. Por eso se permite un
 veredicto sin tolerancias ni márgenes.
 
 ### Pruébalo
@@ -141,12 +141,12 @@ Ejecutado el 22/07/2026 con Python 3.14.6, sin copiar nada de la documentación:
 
 ### El verificador está verificado en un tercio
 
-Lo más interesante queda fuera de esa tabla, y es un defecto de este mismo repositorio.
+Lo más interesante queda fuera de esa tabla y es un defecto de este mismo repositorio.
 
 Una **prueba de mutación** consiste en estropear el programa a propósito, una pieza cada vez, y mirar
-si sus propias pruebas se dan cuenta. Es la única manera de saber si unas pruebas en verde protegen
-algo o solo lo parecen. Aplicada a este repositorio el 22/07/2026, desactivando una invariante cada
-vez, el resultado es este:
+si sus propias pruebas se dan cuenta, que es la única manera de saber si unas pruebas en verde
+protegen algo o solo lo parecen. Aplicada a este repositorio el 22/07/2026, desactivando una
+invariante cada vez, el resultado es este:
 
 | Avería plantada | Las pruebas |
 |---|---|
@@ -159,11 +159,11 @@ el propio control negativo, que planta su error en el resumen, la única capa de
 INV-3. A nadie se le ocurrió plantar además un descuadre en el libro, así que INV-1 e INV-2 se
 quedaron sin quien las examine.
 
-Conviene pensar en lo que eso significa dentro de un repositorio que va precisamente de verificar. El
-aviso lleva escrito desde el 20/07/2026 dentro de `.github/workflows/ci.yml`, con fecha y sin
-arreglar. Esta portada prefiere repetirlo antes que enseñar un «todo verde» que no distinga entre
-las tres reglas. Ampliar la cobertura a INV-1 e INV-2 está pendiente y vale más que cualquier otra
-cosa que se pueda añadir aquí.
+Conviene pensar en lo que eso significa. Un repositorio que va precisamente de verificar lleva el
+aviso escrito desde el 20/07/2026 dentro de `.github/workflows/ci.yml`, con fecha y sin arreglar,
+así que esta portada prefiere repetirlo antes que enseñar un «todo verde» que no distinga entre las
+tres reglas. Ampliar la cobertura a INV-1 e INV-2 está pendiente y vale más que cualquier otra cosa que
+se pueda añadir aquí.
 
 ### Cuándo no sirve
 
@@ -174,7 +174,7 @@ quien dice ser, ni de si la cuenta elegida era la que tocaba.
 
 **El apunte inflado por los dos lados pasa.** Probado: a la primera línea del libro se le pusieron
 quinientos euros de más a la izquierda y quinientos de más a la derecha, y el veredicto siguió siendo
-`SANO`. Las tres invariantes miran diferencias, y a una diferencia le da igual que las dos cifras
+`SANO`. Las tres invariantes miran diferencias. A una diferencia le da igual que las dos cifras
 hayan crecido a la vez.
 
 **Un dato corrupto no da `ENFERMO`, da un plantón.** Con una casilla de importe vacía en el fichero,
@@ -190,7 +190,7 @@ un año de decenas de miles de apuntes la espera se convierte en minutos.
 
 **Lo verosímil se parece a lo correcto más de lo que nos conviene.** Un sistema de inteligencia
 artificial no se cae: sigue contestando con buena forma mientras el fondo se le descuadra por dentro.
-Alguien tiene que volver a contar, y quien recuenta ha de ser distinto de quien contó.
+Alguien tiene que volver a contar. Y quien recuenta ha de ser distinto de quien contó.
 
 **La aritmética no cambia de opinión cuando cambias de modelo.** Ahí está el valor de que la
 vigilancia sea corta y tonta, porque ciento cuatro líneas de sumar y comparar valdrán dentro de tres
@@ -256,7 +256,7 @@ When an ordinary program breaks, it says so: a message appears, everything stops
 it knows there is something to fix. We have lived with that way of failing for forty years.
 
 A system running on artificial intelligence does not break like that. Say you ask it to fix the VAT
-treatment of an invoice. It fixes the entry, and the entry comes out spotless, with what is recorded
+treatment of an invoice. It fixes the entry. And the entry comes out spotless, with what is recorded
 on the left adding up to the same as what is recorded on the right. No warning appears on screen,
 because there is nothing to warn about.
 
@@ -276,8 +276,8 @@ A hundred-and-four-line program, its tests, two files of made-up data and the ex
 all this came from. The only thing the program does is read a set of books and answer with one word,
 `SANO` or `ENFERMO` (healthy or sick).
 
-To decide, it asks no artificial intelligence: it adds, subtracts and compares. It needs no internet
-connection, no database and no piece of software beyond what Python ships with.
+To decide, it asks no artificial intelligence. It adds, subtracts and compares. It needs no internet
+connection. No database. No piece of software beyond what Python ships with.
 
 **Deterministic** means that with the same data it always gives the same answer, today and three
 years from now, whether or not the model was swapped in between.
@@ -312,14 +312,14 @@ left and nothing on the right. From that line, its route through the program tak
 5. **It issues the verdict.** Three rules green gives `SANO`; a single red one gives `ENFERMO`.
 
 On finishing, the program returns a zero or a one, which is how one program tells another "all good"
-or "stop". That is what lets you hang it off an automated process that halts by itself the moment
-something stops adding up.
+or "stop", so it can be hung off an automated process that halts by itself the moment something
+stops adding up.
 
 ### The concepts
 
 An **invariant** is a rule that always holds in correct data, with no exceptions allowed, which is
 why it admits a one-word answer: either it holds, or something is broken. This repository has three
-invariants, each of them watching a different level.
+invariants. Each of them watches a different level.
 
 - INV-1, the global balance. The whole ledger is added up and the left column is checked against
   the right one, 3,420.00 euros on each side in the sample data.
@@ -327,23 +327,23 @@ invariants, each of them watching a different level.
   cancel each other out, so from the total nobody sees them any more.
 - INV-3, coherence between layers. This is the one that answers the cascading VAT failure.
 
-In a data system, a **layer** is each level of processing the same information passes through. There
-are two here: the ledger, which holds the detail entry by entry, and the summary by account, which
-holds each already-computed balance and feeds the reports. Since the summary comes entirely out of
-the ledger, it has to match it.
+In a data system, a **layer** is each level of processing the same information passes through, and
+there are two here: the ledger, which holds the detail entry by entry, and the summary by account,
+which holds each already-computed balance and feeds the reports. Since the summary comes entirely
+out of the ledger, it has to match it.
 
 A **negative control** means injecting an error on purpose to check that the alarm goes off. Without
 it you know the detector is not firing, but you do not know whether it is silent because there is
 nothing wrong or because it has broken. That is what the second of the repository's two tests does:
 it takes the summary, adds a hundred euros to the first account and demands that INV-3 turn red. The
 verdict arrives with the detail attached, `cuenta 600 (resumen=1100.00, real=1000.00)`, while the
-ledger still balances and the other two invariants stay green. This is the textbook case: balanced on
-its own and still incoherent.
+ledger still balances and the other two invariants stay green. This is the textbook case. It balances
+on its own and it is still incoherent.
 
 A computer stores decimal numbers by default in a way that drags a tiny residue along, so if you ask
 it for 0.1 plus 0.2 it answers 0.30000000000000004. Comparing two amounts that way to see whether
 they are equal does not mean much. This program uses the other calculation mode Python offers, the
-one with **exact decimal arithmetic**, which is what lets it issue a verdict with no tolerances and
+one with **exact decimal arithmetic**. That is what lets it issue a verdict with no tolerances and
 no margins.
 
 ### Try it
@@ -384,7 +384,7 @@ Executed on 22/07/2026 with Python 3.14.6, nothing copied from the documentation
 The most interesting part falls outside that table: a defect of this very repository.
 
 A **mutation test** consists of breaking the program on purpose, one piece at a time, and watching
-whether its own tests notice. It is the only way to know whether a green test suite protects
+whether its own tests notice, which is the only way to know whether a green test suite protects
 something or merely looks as if it did. Applied to this repository on 22/07/2026, disabling one
 invariant at a time, the result is this:
 
@@ -399,11 +399,11 @@ the negative control itself, which plants its error in the summary, the only lay
 Nobody thought to plant an imbalance in the ledger as well, so INV-1 and INV-2 were left with no one
 to examine them.
 
-It is worth thinking about what that means inside a repository that is precisely about verification.
-The warning has been written down since 20/07/2026 inside `.github/workflows/ci.yml`, dated and
-unfixed. This page would rather repeat it than show an "all green" that fails to tell the three
-rules apart. Extending coverage to INV-1 and INV-2 is pending and matters more than anything else
-that could be added here.
+It is worth thinking about what that means. A repository that is precisely about verification has
+carried the warning inside `.github/workflows/ci.yml` since 20/07/2026, dated and unfixed, so this
+page would rather repeat it than show an "all green" that fails to tell the three rules apart.
+Extending coverage to INV-1 and INV-2 is pending and matters more than anything else that could be
+added here.
 
 ### When it is not the right tool
 
@@ -415,7 +415,7 @@ right one.
 
 **The entry inflated on both sides gets through.** Tested: the first ledger line was given five
 hundred euros more on the left and five hundred more on the right, and the verdict stayed `SANO`. The
-three invariants look at differences, so two figures growing at once leave the difference untouched.
+three invariants look at differences. Two figures growing at once leave the difference untouched.
 
 **Corrupt data does not give `ENFERMO`, it gives a crash.** With an empty amount cell in the file,
 the program stops with a message written for programmers, never reaching a verdict.
@@ -430,7 +430,7 @@ thousands of entries the wait turns into minutes.
 
 **Plausible looks more like correct than suits us.** An artificial intelligence system does not fall
 over: it keeps answering in good form while the substance quietly stops adding up. Somebody has to
-count again, and whoever recounts has to be someone other than whoever counted.
+count again. And whoever recounts has to be someone other than whoever counted.
 
 **Arithmetic does not change its mind when you change model.** That is the value of a watchdog being
 short and dumb, because a hundred and four lines of adding and comparing will be worth as much three

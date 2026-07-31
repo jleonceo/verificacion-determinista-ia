@@ -82,11 +82,11 @@ Una **invariante** es una regla que en unos datos correctos se cumple siempre y 
 valga, y que por eso admite una respuesta de una sola palabra: o se cumple, o hay algo estropeado.
 En este repositorio las invariantes son tres, y cada una vigila un nivel distinto.
 
-- **INV-1, el cuadre global.** Se suma el libro entero y se comprueba que la columna de la izquierda
+- INV-1, el cuadre global. Se suma el libro entero y se comprueba que la columna de la izquierda
   da lo mismo que la de la derecha, 3.420,00 euros por cada lado en los datos de ejemplo.
-- **INV-2, el cuadre de cada asiento por separado.** Hace falta porque un descuadre y su contrario
+- INV-2, el cuadre de cada asiento por separado. Hace falta porque un descuadre y su contrario
   se anulan entre ellos, y desde el total ya nadie los ve.
-- **INV-3, la coherencia entre capas.** Es la que responde a la avería del IVA en cascada.
+- INV-3, la coherencia entre capas. Es la que responde a la avería del IVA en cascada.
 
 En un sistema de datos, una **capa** es cada nivel de elaboración por el que pasa la misma
 información. Aquí hay dos: el libro, que guarda el detalle apunte por apunte, y el resumen por
@@ -321,11 +321,11 @@ An **invariant** is a rule that always holds in correct data, with no exceptions
 why it admits a one-word answer: either it holds, or something is broken. This repository has three
 invariants, each of them watching a different level.
 
-- **INV-1, the global balance.** The whole ledger is added up and the left column is checked against
+- INV-1, the global balance. The whole ledger is added up and the left column is checked against
   the right one, 3,420.00 euros on each side in the sample data.
-- **INV-2, each entry balancing on its own.** It is needed because an imbalance and its opposite
+- INV-2, each entry balancing on its own. It is needed because an imbalance and its opposite
   cancel each other out, so from the total nobody sees them any more.
-- **INV-3, coherence between layers.** This is the one that answers the cascading VAT failure.
+- INV-3, coherence between layers. This is the one that answers the cascading VAT failure.
 
 In a data system, a **layer** is each level of processing the same information passes through. There
 are two here: the ledger, which holds the detail entry by entry, and the summary by account, which

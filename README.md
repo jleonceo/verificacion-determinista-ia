@@ -29,8 +29,8 @@ un modelo tampoco piensa igual de un mes para otro. De ese cambio de criterio no
 ## Qué hay en este repositorio
 
 ```mermaid
-flowchart TD
-    IA[El ayudante de IA<br/>ya ha contestado] --> C[Cuentas del sistema]
+flowchart LR
+    IA[El ayudante de IA<br/>ya ha contestado] --> C[Cuentas<br/>del sistema]
     C --> V[Verificador de 104 líneas<br/>suma, resta y compara]
     V --> R{¿Cuadran?}
     R -->|Sí| S[SANO]

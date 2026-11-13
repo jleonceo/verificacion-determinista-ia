@@ -2,6 +2,8 @@ English version: [README.en.md](README.en.md)
 
 # verificacion-determinista-ia
 
+[![ci](https://github.com/jleonceo/verificacion-determinista-ia/actions/workflows/ci.yml/badge.svg)](https://github.com/jleonceo/verificacion-determinista-ia/actions/workflows/ci.yml)
+
 **El que recuenta cuando la IA ya ha contestado: comprobaciones de coherencia que no dependen de la IA**
 
 ## El problema

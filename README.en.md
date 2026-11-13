@@ -2,6 +2,8 @@ Versión en español: [README.md](README.md)
 
 # verificacion-determinista-ia
 
+[![ci](https://github.com/jleonceo/verificacion-determinista-ia/actions/workflows/ci.yml/badge.svg)](https://github.com/jleonceo/verificacion-determinista-ia/actions/workflows/ci.yml)
+
 **The one that recounts after the AI has answered: coherence checks that do not depend on AI**
 
 ## The problem

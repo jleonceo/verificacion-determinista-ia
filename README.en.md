@@ -28,6 +28,19 @@ think the same from one month to the next either. Nobody warns you about that ch
 
 ## What is in this repository
 
+```mermaid
+flowchart TD
+    IA[The AI assistant<br/>has already answered] --> C[The system's accounts]
+    C --> V[104-line verifier<br/>adds, subtracts and compares]
+    V --> R{Do they add up?}
+    R -->|Yes| S[SANO]
+    R -->|No| E[ENFERMO]
+    style R fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style S fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    style E fill:#ffebee,stroke:#c62828,color:#b71c1c
+```
+
+
 A hundred-and-four-line program, its tests, two files of made-up data and the explanation of where
 all this came from. The only thing the program does is read a set of books and answer with one word,
 `SANO` or `ENFERMO` (healthy or sick).

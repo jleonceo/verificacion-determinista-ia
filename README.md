@@ -28,6 +28,19 @@ un modelo tampoco piensa igual de un mes para otro. De ese cambio de criterio no
 
 ## Qué hay en este repositorio
 
+```mermaid
+flowchart TD
+    IA[El ayudante de IA<br/>ya ha contestado] --> C[Cuentas del sistema]
+    C --> V[Verificador de 104 líneas<br/>suma, resta y compara]
+    V --> R{¿Cuadran?}
+    R -->|Sí| S[SANO]
+    R -->|No| E[ENFERMO]
+    style R fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style S fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+    style E fill:#ffebee,stroke:#c62828,color:#b71c1c
+```
+
+
 Un programa de ciento cuatro líneas, sus pruebas, dos ficheros de datos inventados y la explicación
 de dónde salió todo. Lo único que hace el programa es leer unas cuentas y contestar con una palabra,
 `SANO` o `ENFERMO`.

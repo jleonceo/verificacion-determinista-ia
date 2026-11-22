@@ -247,7 +247,6 @@ agentes de IA:
 
 - **[gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas)**, el método de gobernanza contado en prosa. Este repo es el código de una de sus piezas: la verificación que recomprueba el estado sin IA.
 - **[accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm)**, el enjambre de agentes que genera la contabilidad. Estas comprobaciones son el guardarraíl que lo mantiene cuadrado.
-- **[audience-analyst-swarm](https://github.com/jleonceo/audience-analyst-swarm)**, el mismo patrón de enjambre llevado a la analítica de audiencias en cuestión de días.
 - **[agent-memory-governance](https://github.com/jleonceo/agent-memory-governance)**, la gobernanza de la memoria del agente. Su hermano: allí se gobierna lo que el agente *recuerda*; aquí, la coherencia de los *datos*.
 - **[claude-code-context-management](https://github.com/jleonceo/claude-code-context-management)**, la gestión de los ficheros de contexto de Claude Code, para que CLAUDE.md y MEMORY.md no saturen el contexto.
 - **[llm-eval-contable](https://github.com/jleonceo/llm-eval-contable)**, el examen que mide si la skill *acierta*. Complementario: aquel verifica las *respuestas*; este, que los *datos* cuadren entre capas.

@@ -244,7 +244,6 @@ This repository is the **verification** piece of a set of projects on AI agent s
 
 - **[gobernanza-skills-analiticas](https://github.com/jleonceo/gobernanza-skills-analiticas)**, the governance method told in prose. This repo is the code of one of its pieces: the verification that rechecks the state without AI.
 - **[accounting-agent-swarm](https://github.com/jleonceo/accounting-agent-swarm)**, the agent swarm that produces the accounting. These checks are the guardrail that keeps it balanced.
-- **[audience-analyst-swarm](https://github.com/jleonceo/audience-analyst-swarm)**, the same swarm pattern carried over to audience analytics in a matter of days.
 - **[agent-memory-governance](https://github.com/jleonceo/agent-memory-governance)**, the governance of the agent's memory. Its sibling: there you govern what the agent *remembers*; here, the coherence of the *data*.
 - **[claude-code-context-management](https://github.com/jleonceo/claude-code-context-management)**, managing the Claude Code context files so CLAUDE.md and MEMORY.md do not bloat the context.
 - **[llm-eval-contable](https://github.com/jleonceo/llm-eval-contable)**, the exam that measures whether the skill *gets it right*. Complementary: that one verifies *answers*; this one, that the *data* matches across layers.
